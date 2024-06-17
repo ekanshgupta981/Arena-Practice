@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hover and class</title>
+
+    <style>
+      * {
+        margin: 0px;
+        font-family: arial;
+      }
+      a {
+        margin-left: 2rem;
+      }
+      .blue {
+        color: white;
+        cursor: pointer;
+        font-size: 60px;
+        transition: 0.5s;
+        margin-left: 5%;
+        padding: 30px;
+        width: 75%;
+      }
+
+      .blue:hover {
+        text-shadow: 0 0 20px #0077ff, 0 0 20px #0077ff, 0 0 120px #0077ff;
+        transform: scale(1.1);
+      }
+      .yellow {
+        color: white;
+        cursor: pointer;
+        font-size: 60px;
+        transition: 0.5s;
+        margin-left: 5%;
+        padding: 30px;
+        width: 75%;
+      }
+
+      .yellow:hover {
+        text-shadow: 0 0 20px yellow, 0 0 20px yellow, 0 0 120px yellow;
+        transform: scale(1.1);
+      }
+
+      .cyan {
+        color: white;
+        cursor: pointer;
+        font-size: 60px;
+        transition: 0.5s;
+        margin-left: 5%;
+        padding: 30px;
+        width: 75%;
+      }
+
+      .cyan:hover {
+        text-shadow: 0 0 20px cyan, 0 0 20px cyan, 0 0 120px cyan;
+        transform: scale(1.1);
+      }
+
+      #nav a:link {
+        color: white;
+        text-decoration: none;
+        transition: 0.1s;
+      }
+
+      #nav a:visited {
+        color: white;
+      }
+
+      #nav a:hover {
+        color: cyan;
+        transform: scale(1.1);
+      }
+
+      #nav a:active {
+        color: Skyblue;
+      }
+    </style>
+  </head>
+  <body bgcolor="black">
+    <p
+      style="
+        background: #1c2128;
+        padding: 15px;
+        font-size: 15px;
+        font-family: arial;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      "
+      id="nav"
+    >
+      <a href="index.html">
+        <img src="images/logo.png" height="50px" width="50px"
+      /></a>
+      <a href="index.html" style="margin-left: 62%">HOME</a>
+      <a href="">ABOUT</a>
+      <a href="practicework.html">PRACTICE WORK</a>
+      <a href="https://www.behance.net/ekanshgupta2">PROJECTS</a>
+    </p>
+    <h1
+      style="
+        text-align: center;
+        color: #00adb5;
+        font-size: 40px;
+        font-family: arial;
+        margin-top: 30px;
+      "
+      ;
+    >
+      Hover effect
+    </h1>
+    <h2 class="blue">Hover Blue neon</h2>
+    <h2 class="yellow">Hover yellow neon</h2>
+    <h2 class="cyan">Hover cyan neon</h2>
+  </body>
+</html>

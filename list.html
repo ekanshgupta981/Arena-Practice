@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>List</title>
+
+    <style>
+      * {
+        margin: 0px;
+      }
+      #nav a {
+        margin-left: 2rem;
+      }
+
+      #nav a:link {
+        color: white;
+        text-decoration: none;
+        transition: 0.1s;
+      }
+
+      #nav a:visited {
+        color: white;
+      }
+
+      #nav a:hover {
+        color: cyan;
+        transform: scale(1.1);
+      }
+
+      #nav a:active {
+        color: Skyblue;
+      }
+    </style>
+  </head>
+  <body bgcolor="#EEEEEE">
+    <p
+      style="
+        background: #1c2128;
+        padding: 15px;
+        font-size: 15px;
+        font-family: arial;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      "
+      id="nav"
+    >
+      <a href="index.html">
+        <img src="images/logo.png" height="50px" width="50px"
+      /></a>
+      <a href="index.html" style="margin-left: 62%">HOME</a>
+      <a href="">ABOUT</a>
+      <a href="practicework.html">PRACTICE WORK</a>
+      <a href="https://www.behance.net/ekanshgupta2">PROJECTS</a>
+    </p>
+    <h1
+      style="
+        text-align: center;
+        color: #00adb5;
+        font-size: 40px;
+        font-family: arial;
+        margin-top: 30px;
+      "
+    >
+      List
+    </h1>
+
+    <!---- List ---->
+    <ul
+      style="
+        font-family: 'Gloria Hallelujah', cursive;
+
+        margin-left: 30px;
+        color: #393e46;
+        padding-bottom: 30px;
+      "
+    >
+      <h1><li>order list</li></h1>
+      <ol style="margin-top: 20px">
+        <h2><li>List with Small (a)</li></h2>
+        <ol type="a" style="margin-top: 10px">
+          <h2><li>Small a</li></h2>
+          <h2><li>Small b</li></h2>
+          <h2><li>Small c</li></h2>
+        </ol>
+
+        <h2 style="margin-top: 20px"><li>List with Capital (A)</li></h2>
+        <ol type="A" style="margin-top: 10px">
+          <h2><li>Capital A</li></h2>
+          <h2><li>Capital B</li></h2>
+          <h2><li>Capital C</li></h2>
+        </ol>
+
+        <h2 style="margin-top: 20px">
+          <li>List with Small roman number (i)</li>
+        </h2>
+        <ol type="i" style="margin-top: 10px">
+          <h2><li>Small i</li></h2>
+          <h2><li>Small ii</li></h2>
+          <h2><li>Small iii</li></h2>
+        </ol>
+
+        <h2 style="margin-top: 20px">
+          <li>List with Capital roman number (I)</li>
+        </h2>
+        <ol type="I" style="margin-top: 10px">
+          <h2><li>Capital I</li></h2>
+          <h2><li>Capital II</li></h2>
+          <h2><li>Capital III</li></h2>
+        </ol>
+      </ol>
+
+      <!-- unorder list --->
+
+      <h1 style="margin-top: 30px"><li>unorder list</li></h1>
+      <ol style="margin-top: 20px">
+        <h2 style="margin-top: 20px"><li>List with Circle</li></h2>
+        <ul type="Circle" style="margin-top: 10px">
+          <h2><li>Circle list 1</li></h2>
+          <h2><li>Circle list 2</li></h2>
+          <h2><li>Circle list 3</li></h2>
+        </ul>
+
+        <h2 style="margin-top: 20px"><li>List with Sqare</li></h2>
+        <ul type="Sqare" style="margin-top: 10px">
+          <h2><li>Sqare list 1</li></h2>
+          <h2><li>Sqare list 2</li></h2>
+          <h2><li>Sqare list 3</li></h2>
+        </ul>
+
+        <h2 style="margin-top: 20px"><li>List with image</li></h2>
+        <ul style="margin-top: 10px; list-style-image: url(images/tomato.png)">
+          <h2><li>Tomato image list 1</li></h2>
+          <h2><li>Tomato image list 2</li></h2>
+          <h2><li>Tomato image list 3</li></h2>
+        </ul>
+      </ol>
+    </ul>
+  </body>
+</html>

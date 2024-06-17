@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>image gallery</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+    />
+
+    <style>
+      @keyframes zoomout {
+        from {
+          transform: scale(2);
+        }
+        to {
+          transform: scale(1);
+        }
+      }
+      * {
+        margin: 0px;
+      }
+      .main {
+        text-align: center;
+        padding: 1rem;
+      }
+      .picstyle {
+        width: 40%;
+        animation: zoomout 1s linear;
+      }
+    </style>
+  </head>
+  <body bgcolor="#222831">
+    <div style="padding: 1rem; font-size: 2rem">
+      <a href="/imagegallery.html"> ⬅️ </a>
+    </div>
+    <div class="main">
+      <img src="images/hd4.jpg" alt="pic" class="picstyle" />
+    </div>
+  </body>
+</html>
