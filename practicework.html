@@ -7,6 +7,42 @@
         margin: 0px;
         font-family: "Roboto", sans-serif;
       }
+      ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+
+      h1 li {
+        width: 20rem;
+      }
+
+      h1 li {
+        list-style: none;
+        border: 2px solid #222831;
+        padding: 1rem;
+        border-radius: 1rem;
+
+        transition: 0.3s;
+      }
+
+      h1 a:link {
+        color: #222831;
+        text-decoration: none;
+      }
+
+      h1 a:visited {
+        color: #222831;
+      }
+      h1 li:hover {
+        background: #00adb5;
+        color: #eeeeee;
+        transform: scale(1.1);
+        box-shadow: 0px 20px 10px 0px rgba(0, 0, 0, 0.2);
+      }
+
       #nav a {
         margin-left: 2rem;
       }
@@ -59,19 +95,18 @@
     <a href="https://www.behance.net/ekanshgupta2">PROJECTS</a>
   </p>
   <body bgcolor="#EEEEEE">
-    <h1
-      style="
-        text-align: center;
-        color: #00adb5;
-        font-size: 40px;
-        font-family: arial;
-        margin-top: 30px;
-      "
-      ;
-    >
-      Practice Work
-    </h1>
     <ul>
+      <h1
+        style="
+          color: #00adb5;
+          font-size: 40px;
+          font-family: arial;
+          margin-top: 30px;
+        "
+        ;
+      >
+        Practice Work
+      </h1>
       <h1 style="padding: 20px">
         <a href="list.html"><li>List</li></a>
       </h1>
@@ -80,6 +115,10 @@
       </h1>
       <h1 style="padding: 20px">
         <a href="imagegallery.html"><li>Image gallery</li></a>
+      </h1>
+
+      <h1 style="padding: 20px">
+        <a href="table.html"><li>Table</li></a>
       </h1>
     </ul>
   </body>
