@@ -30,7 +30,9 @@
         color: Skyblue;
       }
       .card-body {
-        margin: auto;
+        margin-bottom: 5rem;
+        float: left;
+        margin-left: 10%;
         transition: 0.5s;
         cursor: pointer;
         margin-top: 5rem;
@@ -61,7 +63,9 @@
       }
 
       .card-body1 {
-        margin: auto;
+        margin-bottom: 5rem;
+        float: left;
+        margin-left: 10%;
         transition: 0.5s;
         cursor: pointer;
         margin-top: 5rem;
@@ -91,7 +95,9 @@
         margin-top: 80%;
       }
       .card-body2 {
-        margin: auto;
+        margin-bottom: 5rem;
+        float: left;
+        margin-left: 10%;
         transition: 0.5s;
         cursor: pointer;
         margin-top: 5rem;
@@ -123,15 +129,15 @@
 
       .card-body:hover {
         transform: scale(1.2);
-        box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+        box-shadow: 0 0 20px cyan, 0 0 20px cyan, 0 0 120px cyan;
       }
       .card-body1:hover {
         transform: scale(1.2);
-        box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+        box-shadow: 0 0 20px khaki, 0 0 20px khaki, 0 0 120px khaki;
       }
       .card-body2:hover {
         transform: scale(1.2);
-        box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+        box-shadow: 0 0 20px orange, 0 0 20px orange, 0 0 120px orange;
       }
 
       section {
@@ -144,31 +150,93 @@
         color: Skyblue;
         font-size: 0.8rem;
         padding: 1.5rem;
+        margin-top: 1rem;
         text-align: justify;
         height: 5rem;
         overflow: auto;
       }
 
+      .card-body p::-webkit-scrollbar {
+        width: 7px;
+      }
+      /* Track */
+      .card-body p::-webkit-scrollbar-track {
+        background: #0f3c68;
+        border-radius: 15px;
+      }
+
+      /* Handle */
+      .card-body p::-webkit-scrollbar-thumb {
+        background: white;
+        box-shadow: 0 0 20px cyan, 0 0 20px cyan, 0 0 120px cyan;
+        border-radius: 15px;
+      }
+
+      /* Handle on hover */
+      .card-body p::-webkit-scrollbar-thumb:hover {
+        background: white;
+      }
       .card-body1 p {
         color: khaki;
         font-size: 0.8rem;
         padding: 1.5rem;
+        margin-top: 1rem;
         text-align: justify;
         height: 5rem;
         overflow: auto;
       }
+      .card-body1 p::-webkit-scrollbar {
+        width: 7px;
+      }
+      /* Track */
+      .card-body1 p::-webkit-scrollbar-track {
+        border-radius: 15px;
+        background: #68650f;
+      }
 
+      /* Handle */
+      .card-body1 p::-webkit-scrollbar-thumb {
+        background: white;
+        box-shadow: 0 0 20px khaki, 0 0 20px khaki, 0 0 120px khaki;
+        border-radius: 15px;
+      }
+
+      /* Handle on hover */
+      .card-body1 p::-webkit-scrollbar-thumb:hover {
+        background: white;
+      }
       .card-body2 p {
         color: rgb(224, 172, 27);
         font-size: 0.8rem;
         padding: 1.5rem;
+        margin-top: 1rem;
         text-align: justify;
         height: 5rem;
         overflow: auto;
       }
+      .card-body2 p::-webkit-scrollbar {
+        width: 7px;
+      }
+      /* Track */
+      .card-body2 p::-webkit-scrollbar-track {
+        background: #68390f;
+        border-radius: 15px;
+      }
+
+      /* Handle */
+      .card-body2 p::-webkit-scrollbar-thumb {
+        background: white;
+        box-shadow: 0 0 20px orange, 0 0 20px orange, 0 0 120px orange;
+        border-radius: 15px;
+      }
+
+      /* Handle on hover */
+      .card-body2 p::-webkit-scrollbar-thumb:hover {
+        background: white;
+      }
     </style>
   </head>
-  <body>
+  <body bgcolor="black">
     <p
       style="
         background: #1c2128;
@@ -189,7 +257,18 @@
       <a href="practicework.html">PRACTICE WORK</a>
       <a href="https://www.behance.net/ekanshgupta2">PROJECTS</a>
     </p>
-    <div style="width: 50%; margin: auto; padding-bottom: 5rem">
+    <h1
+      style="
+        color: #00adb5;
+        font-size: 40px;
+        font-family: arial;
+        margin-top: 30px;
+        text-align: center;
+      "
+    >
+      Div Overflows
+    </h1>
+    <div style="margin-bottom: 5rem">
       <div class="card-body">
         <div class="cardbackground">
           <div class="card-content">
