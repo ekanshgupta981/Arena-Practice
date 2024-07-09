@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Keyframes Animation</title>
+    <style>
+      * {
+        margin: 0px;
+        font-family: "Roboto", sans-serif;
+      }
+
+      /* Nav */
+      #nav a {
+        margin-left: 2rem;
+      }
+
+      #nav a:link {
+        color: white;
+        text-decoration: none;
+        transition: 0.1s;
+      }
+
+      #nav a:visited {
+        color: white;
+      }
+
+      #nav a:hover {
+        color: cyan;
+        transform: scale(1.1);
+      }
+
+      #nav a:active {
+        color: Skyblue;
+      }
+      /* nav ends */
+
+      /* Keyframes */
+      @keyframes bird {
+        0% {
+          top: 10px;
+          left: -25%;
+        }
+
+        33.33% {
+          top: 10px;
+          left: 15%;
+        }
+        55.55% {
+          top: 100%;
+          left: 45%;
+        }
+        66.66% {
+          top: 20%;
+          left: 45%;
+        }
+        88.88% {
+          top: 20%;
+          left: 45%;
+        }
+        100% {
+          top: 10px;
+          left: 100%;
+        }
+      }
+
+      @keyframes head {
+        0% {
+          top: 115%;
+          left: 38%;
+        }
+        55.55% {
+          top: 115%;
+          left: 38%;
+        }
+        66.66% {
+          top: 38%;
+          left: 38%;
+        }
+        88.88% {
+          top: 38%;
+          left: 38%;
+        }
+        100% {
+          top: 119%;
+          left: 38%;
+        }
+      }
+
+      #bird1 {
+        height: 200px;
+        width: 200px;
+        background: url("images/brd.gif");
+        background-repeat: no-repeat;
+        background-size: contain;
+        cursor: pointer;
+        position: absolute;
+        top: 10px;
+        left: -25%;
+        animation: bird 17s infinite ease-in-out;
+      }
+
+      h1 {
+        position: absolute;
+        top: 115%;
+        left: 38%;
+        z-index: 99;
+        animation: head 17s infinite ease-in-out;
+      }
+
+      .animation-container {
+        width: 100%;
+        height: 610px;
+        overflow: hidden;
+        position: relative;
+      }
+    </style>
+  </head>
+  <body>
+    <p
+      style="
+        background: #1c2128;
+        padding: 15px;
+        font-size: 15px;
+        font-family: arial;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      "
+      id="nav"
+    >
+      <a href="index.html">
+        <img src="images/logo.png" height="50px" width="50px"
+      /></a>
+      <a href="index.html" style="margin-left: 62%">HOME</a>
+      <a href="">ABOUT</a>
+      <a href="practicework.html">PRACTICE WORK</a>
+      <a href="https://www.behance.net/ekanshgupta2">PROJECTS</a>
+    </p>
+    <!-- Heading -->
+
+    <!-- Keyframes animation html -->
+    <div class="animation-container">
+      <h1 style="color: #00adb5; font-size: 40px; font-family: arial">
+        Keyframes Animation
+      </h1>
+      <div id="bird1"></div>
+      <div id="bird2"></div>
+    </div>
+  </body>
+</html>
