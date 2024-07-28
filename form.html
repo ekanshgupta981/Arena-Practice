@@ -73,9 +73,33 @@
         color: Skyblue;
       }
       table {
-        padding: 1rem;
         border: 2px solid gray;
         margin: auto;
+        width: 28%;
+      }
+      .logo {
+        height: 3rem;
+        width: 3rem;
+      }
+      .hd-tr {
+        background: #1c2128;
+      }
+      .input-set {
+        margin: auto;
+        border: 2px solid #bababa;
+        width: 95%;
+        font-size: 1.2rem;
+        padding: 0.5rem;
+        border-radius: 0.2rem;
+      }
+      label {
+        color: #393e46;
+        font-size: 1.1rem;
+      }
+      input[type="submit"]:hover {
+        background: #00adb5;
+        color: white;
+        transform: scale(1.1);
       }
     </style>
   </head>
@@ -111,24 +135,53 @@
     >
       Form
     </h1>
-    <table cellpadding="10">
+    <table cellpadding="5">
       <form action="http://user/data/get.php" method="get">
         <tr>
-          <td>User Name</td>
-          <td>
-            <input type="text" />
-          </td>
+          <caption style="padding: 1rem" class="hd-tr">
+            <img src="images/logo.png" alt="" class="logo" />
+          </caption>
         </tr>
         <tr>
-          <td>User Password</td>
-          <td>
-            <input type="password" />
-          </td>
+          <td><label>User Name</label></td>
         </tr>
         <tr>
           <td>
-            <input type="submit" value="login" />
-            <input type="reset" />
+            <input
+              type="text"
+              class="input-set"
+              required
+              placeholder="Name..."
+            />
+          </td>
+        </tr>
+        <tr>
+          <td><label>User Password</label></td>
+        </tr>
+        <tr>
+          <td>
+            <input
+              type="password"
+              class="input-set"
+              required
+              placeholder="Password..."
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input
+              type="submit"
+              value="login"
+              style="
+                margin-left: 70%;
+                font-size: 1.5rem;
+                padding: 0.1rem 2rem;
+                border-radius: 0.2rem;
+                margin-top: 2rem;
+                transition: 200ms ease-in-out;
+              "
+            />
           </td>
         </tr>
       </form>
