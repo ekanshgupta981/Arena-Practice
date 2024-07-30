@@ -96,10 +96,22 @@
         color: #393e46;
         font-size: 1.1rem;
       }
-      input[type="submit"]:hover {
+
+      .btn {
+        display: flex;
+        justify-content: end;
+      }
+      .btn input:hover {
         background: #00adb5;
         color: white;
         transform: scale(1.1);
+      }
+      input:required:valid {
+        border-bottom: 2px outset #0be4ef;
+        background: #00b58b4a;
+      }
+      input:required:invalid {
+        border-bottom: 2px outset red;
       }
     </style>
   </head>
@@ -143,13 +155,15 @@
           </caption>
         </tr>
         <tr>
-          <td><label>User Name</label></td>
+          <td><label for="name">User Name</label></td>
         </tr>
         <tr>
           <td>
             <input
               type="text"
+              id="name"
               class="input-set"
+              pattern="[A-Z,a-z]{3,10}"
               required
               placeholder="Name..."
             />
@@ -169,12 +183,36 @@
           </td>
         </tr>
         <tr>
+          <td><label>User Number</label></td>
+        </tr>
+        <tr>
           <td>
+            <input
+              type="number"
+              class="input-set"
+              required
+              placeholder="Number "
+            />
+          </td>
+        </tr>
+        <tr>
+          <td class="btn">
             <input
               type="submit"
               value="login"
               style="
-                margin-left: 70%;
+                font-size: 1.5rem;
+                padding: 0.1rem 2rem;
+                border-radius: 0.2rem;
+                margin-top: 2rem;
+                margin-right: 1rem;
+                transition: 200ms ease-in-out;
+              "
+            />
+            <input
+              type="reset"
+              value="Clear"
+              style="
                 font-size: 1.5rem;
                 padding: 0.1rem 2rem;
                 border-radius: 0.2rem;
