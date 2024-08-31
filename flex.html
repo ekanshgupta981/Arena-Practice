@@ -1,0 +1,143 @@
+<!DOCTYPE >
+<html>
+  <head>
+    <title>Flex Box</title>
+    <style>
+      * {
+        margin: 0px;
+        font-family: "Roboto", sans-serif;
+      }
+
+      #nav a {
+        margin-left: 2rem;
+      }
+      .middle {
+        display: flex;
+        justify-content: space-between;
+        padding-right: 2rem;
+        margin-bottom: 3rem;
+        margin-top: 3rem;
+      }
+
+      #nav a:link {
+        color: white;
+        text-decoration: none;
+        transition: 0.1s;
+      }
+
+      #nav a:visited {
+        color: white;
+      }
+
+      #nav a:hover {
+        color: cyan;
+        transform: scale(1.1);
+      }
+
+      #nav a:active {
+        color: Skyblue;
+      }
+
+      /* box */
+
+      .main {
+        display: flex;
+        justify-content: center;
+      }
+      .container {
+        width: 85%;
+
+        background: black;
+        justify-content: center;
+        display: flex;
+        flex-wrap: wrap;
+        animation: cont 6s ease-in-out infinite alternate;
+      }
+
+      @keyframes cont {
+        from {
+          width: 85%;
+        }
+        to {
+          width: 35%;
+        }
+      }
+      .box {
+        height: 5rem;
+        width: 5rem;
+        margin: 1rem 3.5rem;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .box1 {
+        border: 2px solid rgb(255, 166, 0);
+        background: rgba(255, 166, 0, 0.388);
+      }
+      .box2 {
+        border: 2px solid rgb(0, 128, 0);
+        background: rgba(0, 128, 0, 0.466);
+      }
+      .box3 {
+        border: 2px solid rgb(0, 255, 255);
+        background: rgba(0, 255, 255, 0.412);
+      }
+      .box4 {
+        border: 2px solid rgb(255, 0, 255);
+        background: rgba(255, 0, 255, 0.392);
+      }
+      .box5 {
+        border: 2px solid rgb(255, 0, 0);
+        background: rgba(255, 0, 0, 0.497);
+      }
+      .box6 {
+        border: 2px solid rgb(0, 255, 166);
+        background: rgba(0, 255, 166, 0.412);
+      }
+    </style>
+    <p
+      style="
+        background: #1c2128;
+        padding: 15px;
+        font-size: 15px;
+        font-family: arial;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      "
+      id="nav"
+    >
+      <a href="index.html">
+        <img src="images/logo.png" height="50px" width="50px"
+      /></a>
+      <a href="index.html" style="margin-left: 62%">HOME</a>
+      <a href="">ABOUT</a>
+      <a href="practicework.html">PRACTICE WORK</a>
+      <a href="https://www.behance.net/ekanshgupta2">PROJECTS</a>
+    </p>
+  </head>
+  <body bgcolor="#EEEEEE">
+    <h1
+      style="
+        color: #00adb5;
+        font-size: 40px;
+        font-family: arial;
+        margin: 30px 0px;
+        text-align: center;
+      "
+    >
+      FLEX BOX
+    </h1>
+    <div class="main">
+      <div class="container">
+        <div class="box box1"><h3>1</h3></div>
+        <div class="box box2"><h3>2</h3></div>
+        <div class="box box3"><h3>3</h3></div>
+        <div class="box box4"><h3>4</h3></div>
+        <div class="box box5"><h3>5</h3></div>
+        <div class="box box6"><h3>6</h3></div>
+      </div>
+    </div>
+  </body>
+</html>
