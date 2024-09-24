@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <title>First js</title>
+    <style>
+      body {
+        font-family: "Gloria Hallelujah", cursive;
+        background: rgb(243, 234, 188);
+      }
+      * {
+        margin: 0px;
+      }
+
+      #nav a {
+        margin-left: 2rem;
+      }
+      .middle {
+        display: flex;
+        justify-content: space-between;
+        padding-right: 2rem;
+        margin-bottom: 3rem;
+        margin-top: 3rem;
+      }
+
+      #nav a:link {
+        color: white;
+        text-decoration: none;
+        transition: 0.1s;
+      }
+
+      #nav a:visited {
+        color: white;
+      }
+
+      #nav a:hover {
+        color: cyan;
+        transform: scale(1.1);
+      }
+
+      #nav a:active {
+        color: Skyblue;
+      }
+
+      /* this page settings */
+      button {
+        cursor: pointer;
+        transition: 300ms ease-out;
+      }
+      button:hover {
+        background: #211710 !important;
+        color: white !important;
+      }
+      button:active {
+        transform: scale(0.9);
+      }
+    </style>
+    <p
+      style="
+        background: #1c2128;
+        padding: 15px;
+        font-size: 15px;
+        font-family: arial;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      "
+      id="nav"
+    >
+      <a href="../index.html">
+        <img src="../images/logo.png" height="50px" width="50px"
+      /></a>
+      <a href="../index.html" style="margin-left: 62%">HOME</a>
+      <a href="">ABOUT</a>
+      <a href="../practicework.html">PRACTICE WORK</a>
+      <a href="https://www.behance.net/ekanshgupta2">PROJECTS</a>
+    </p>
+  </head>
+  <body>
+    <h1
+      style="
+        color: #211710;
+        font-size: 40px;
+
+        margin-top: 30px;
+        text-align: center;
+      "
+    >
+      Notes
+    </h1>
+    <div style="display: flex; justify-content: center; margin-top: 2rem">
+      <button
+        style="
+          padding: 1rem 3rem;
+          font-size: 1.5rem;
+          border-radius: 10px;
+          color: #211710;
+          background: transparent;
+        "
+        onclick="headings()"
+      >
+        Add title
+      </button>
+      <button
+        style="
+          padding: 1rem 3rem;
+          font-size: 1.5rem;
+          border-radius: 10px;
+          color: #211710;
+          background: transparent;
+          margin-left: 1rem;
+        "
+        onclick="add()"
+      >
+        Add notes
+      </button>
+    </div>
+    <script>
+      function add() {
+        var notedata = prompt("type note", "empty");
+        var list = document.createElement("ul");
+        document.body.appendChild(list);
+        list.innerHTML = `<h2><li style="border-bottom:0.5px solid black;width:95%;padding:1rem">${notedata}</li></h2>`;
+      }
+      function headings() {
+        var notedatas = prompt("type title", "empty");
+        var lists = document.createElement("ul");
+        document.body.appendChild(lists);
+        lists.innerHTML = `<h1><li style="width:95%;padding:1rem">${notedatas}</li></h1>`;
+      }
+    </script>
+  </body>
+</html>
