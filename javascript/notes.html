@@ -125,13 +125,15 @@
         var notedata = prompt("type note", "empty");
         var list = document.createElement("ul");
         document.body.appendChild(list);
-        list.innerHTML = `<h2><li style="border-bottom:0.5px solid black;width:95%;padding:1rem">${notedata}</li></h2>`;
+        list.innerHTML = `<h2><li style="border-bottom:0.5px solid black;width:95%;word-wrap: break-word;padding:1rem">${notedata}</li></h2>`;
+        list.contentEditable = true;
       }
       function headings() {
-        var notedatas = prompt("type title", "empty");
+        var notedatas = prompt("type title", "heading");
         var lists = document.createElement("ul");
         document.body.appendChild(lists);
-        lists.innerHTML = `<h1><li style="width:95%;padding:1rem">${notedatas}</li></h1>`;
+        lists.innerHTML = `<h1><li style="width:95%;word-wrap: break-word;padding:1rem">${notedatas}</li></h1>`;
+        lists.contentEditable = true;
       }
     </script>
   </body>
