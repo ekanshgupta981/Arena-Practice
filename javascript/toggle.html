@@ -75,7 +75,7 @@
         border: 2px solid white;
 
         border-radius: 100px;
-        transition: 500ms linear;
+        transition: 400ms linear;
         cursor: pointer;
       }
       .toggle_btn_ball {
@@ -83,7 +83,7 @@
         border: 8px solid rgba(170, 65, 86, 0.077);
         border-radius: 50%;
         height: 5rem;
-        transition: 500ms linear;
+        transition: 400ms linear;
         width: 5rem;
         display: flex;
         justify-content: center;
@@ -105,11 +105,12 @@
       var sun = document.createElement("span");
       sun.innerHTML = `<i class="bi bi-brightness-high-fill" style="color:orange;"></i>`;
       toggle_button_circle.appendChild(sun);
+      var moon = document.createElement("span");
+      moon.innerHTML = `<i class="bi bi-moon-stars-fill" style="color:purple;"i>`;
       toggle_button.onclick = function () {
         if (a == 0) {
           toggle_button_circle.style = `margin-left:62%;`;
-          var moon = document.createElement("span");
-          moon.innerHTML = `<i class="bi bi-moon-stars-fill" style="color:purple;></i>`;
+
           toggle_button_circle.appendChild(moon);
           a = 1;
           document.body.style = `background:url("../images/6366.jpg");background-repeat:no-repeat;background-size:cover;`;
@@ -120,7 +121,7 @@
           toggle_button_circle.appendChild(sun);
           document.body.style = `background:url("../images/10361.jpg");background-repeat:no-repeat;background-size:cover;`;
           a = 0;
-          document.removeChild(moon);
+          toggle_button_circle.removeChild(moon);
         }
       };
       document.body.style = `background:url("../images/10361.jpg");background-repeat:no-repeat;background-size:cover;`;
