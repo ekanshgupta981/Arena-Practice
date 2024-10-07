@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <title>Toggle Button</title>
+
+    <p
+      style="
+        background: #1c2128;
+        padding: 15px;
+        font-size: 15px;
+        font-family: arial;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      "
+      id="nav"
+    >
+      <a href="../index.html">
+        <img src="../images/logo.png" height="50px" width="50px"
+      /></a>
+      <a href="../index.html" style="margin-left: 62%">HOME</a>
+      <a href="">ABOUT</a>
+      <a href="../practicework.html">PRACTICE WORK</a>
+      <a href="https://www.behance.net/ekanshgupta2">PROJECTS</a>
+    </p>
+    <style>
+      * {
+        transition: 400ms linear;
+      }
+      * {
+        margin: 0px;
+      }
+
+      #nav a {
+        margin-left: 2rem;
+      }
+      .middle {
+        display: flex;
+        justify-content: space-between;
+        padding-right: 2rem;
+        margin-bottom: 3rem;
+        margin-top: 3rem;
+      }
+
+      #nav a:link {
+        color: white;
+        text-decoration: none;
+        transition: 0.1s;
+      }
+
+      #nav a:visited {
+        color: white;
+      }
+
+      #nav a:hover {
+        color: cyan;
+        transform: scale(1.1);
+      }
+
+      #nav a:active {
+        color: Skyblue;
+      }
+
+      /* this page content */
+      .toggle_btn {
+        width: 15rem;
+        margin: 3rem;
+        padding: 0.7rem;
+        border: 2px solid white;
+
+        border-radius: 100px;
+        transition: 500ms linear;
+        cursor: pointer;
+      }
+      .toggle_btn_ball {
+        background: white;
+        border: 8px solid rgba(170, 65, 86, 0.077);
+        border-radius: 50%;
+        height: 5rem;
+        transition: 500ms linear;
+        width: 5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2.2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div class="toggle_btn" id="tb">
+        <div class="toggle_btn_ball" id="tbb"></div>
+      </div>
+    </div>
+    <script>
+      var toggle_button = document.getElementById("tb");
+      var toggle_button_circle = document.getElementById("tbb");
+      var a = 0;
+      var sun = document.createElement("span");
+      sun.innerHTML = `<i class="bi bi-brightness-high-fill" style="color:orange;"></i>`;
+      toggle_button_circle.appendChild(sun);
+      toggle_button.onclick = function () {
+        if (a == 0) {
+          toggle_button_circle.style = `margin-left:62%;`;
+          var moon = document.createElement("span");
+          moon.innerHTML = `<i class="bi bi-moon-stars-fill" style="color:purple;></i>`;
+          toggle_button_circle.appendChild(moon);
+          a = 1;
+          document.body.style = `background:url("../images/6366.jpg");background-repeat:no-repeat;background-size:cover;`;
+          toggle_button_circle.removeChild(sun);
+        } else {
+          toggle_button_circle.style = `margin-left:0rem`;
+
+          toggle_button_circle.appendChild(sun);
+          document.body.style = `background:url("../images/10361.jpg");background-repeat:no-repeat;background-size:cover;`;
+          a = 0;
+          document.removeChild(moon);
+        }
+      };
+      document.body.style = `background:url("../images/10361.jpg");background-repeat:no-repeat;background-size:cover;`;
+    </script>
+  </body>
+</html>
