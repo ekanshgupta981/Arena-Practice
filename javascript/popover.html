@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <title>Timer</title>
+    <style>
+      * {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+      }
+
+      #nav {
+        background: #1c2128;
+        padding: 15px;
+        font-size: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      #nav a {
+        color: white;
+        text-decoration: none;
+        margin-left: 2rem;
+        transition: 0.1s;
+      }
+
+      #nav a:hover {
+        color: cyan;
+        transform: scale(1.1);
+      }
+
+      #nav a:active {
+        color: skyblue;
+      }
+
+      .middle {
+        display: flex;
+        justify-content: space-between;
+        padding-right: 2rem;
+        margin: 3rem 0;
+      }
+
+      h1 {
+        color: #00adb5;
+        font-size: 40px;
+        margin-top: 30px;
+        text-align: center;
+      }
+
+      i {
+        cursor: pointer !important;
+        transition: 200ms linear;
+      }
+
+      i:hover {
+        color: black !important;
+      }
+      .popupad {
+        animation: popup 600ms linear;
+      }
+
+      @keyframes popup {
+        0% {
+          width: 0%;
+          height: 0%;
+        }
+        25% {
+          width: 35%;
+          height: 1%;
+        }
+
+        100% {
+          height: 50%;
+        }
+      }
+    </style>
+    <p id="nav">
+      <a href="../index.html">
+        <img src="../images/logo.png" height="50px" width="50px"
+      /></a>
+      <a href="../index.html" style="margin-left: 62%">HOME</a>
+      <a href="">ABOUT</a>
+      <a href="../practicework.html">PRACTICE WORK</a>
+      <a href="https://www.behance.net/ekanshgupta2">PROJECTS</a>
+    </p>
+  </head>
+  <body>
+    <h1>Set Function Time</h1>
+    <h1 style="text-align: center; margin-top: 3rem">Please Wait 5 seconds</h1>
+    <script>
+      setTimeout("adTimer()", 5000);
+
+      var popup = document.createElement("div");
+
+      function adTimer() {
+        popup.style =
+          "display: flex; justify-content: center; background-color: rgba(0, 0, 0, 0.596); position: absolute; top: 0; align-items: center; width: 100%; height: 100vh;";
+        popup.innerHTML = `
+        <div class="popupad" style="background: url('/images/ad.gif'); background-repeat: no-repeat; background-position: center; background-size: cover; border-radius: 10px; width: 35%; height: 50%; padding: 1rem; box-shadow: 10px 5px 10px rgba(0, 0, 0, 0.279); text-align: end;">
+          <i class="bi bi-x-lg" style="font-size: 1.5rem; color: gray" onClick="clsBox()"></i>
+        </div>`;
+        document.body.appendChild(popup);
+      }
+
+      function clsBox() {
+        document.body.removeChild(popup);
+        setTimeout("adTimer()", 5000);
+      }
+    </script>
+  </body>
+</html>
