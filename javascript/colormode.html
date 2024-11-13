@@ -1,19 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-    />
-    <title>Color Mode</title>
+    <title>Practice Work</title>
     <style>
       * {
-        font-family: Arial, Helvetica, sans-serif;
-      }
-      * {
         margin: 0px;
+        font-family: "Roboto", sans-serif;
+      }
+      .ulsec {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      ul {
+        width: 40%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        flex-wrap: wrap;
+        margin: 0px;
+        padding: 0px;
+        padding-top: 3rem;
+      }
+
+      /* h1 li {
+        width: 20rem;
+      } */
+
+      h1 li {
+        list-style: none;
+        border: 2px solid #222831;
+        padding: 1rem;
+        border-radius: 1rem;
+
+        transition: 0.3s;
+      }
+
+      h1 a:link {
+        color: #222831;
+        text-decoration: none;
+      }
+
+      h1 a:visited {
+        color: #222831;
+      }
+      h1 li:hover {
+        background: #00adb5;
+        color: #eeeeee;
+        transform: scale(1.1);
+        box-shadow: 0px 20px 10px 0px rgba(0, 0, 0, 0.2);
       }
 
       #nav a {
@@ -46,28 +82,28 @@
         color: Skyblue;
       }
     </style>
-    <p
-      style="
-        background: #1c2128;
-        padding: 15px;
-        font-size: 15px;
-        font-family: arial;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      "
-      id="nav"
-    >
-      <a href="../index.html">
-        <img src="../images/logo.png" height="50px" width="50px"
-      /></a>
-      <a href="../index.html" style="margin-left: 62%">HOME</a>
-      <a href="">ABOUT</a>
-      <a href="../practicework.html">PRACTICE WORK</a>
-      <a href="https://www.behance.net/ekanshgupta2">PROJECTS</a>
-    </p>
   </head>
-  <body>
+  <p
+    style="
+      background: #1c2128;
+      padding: 15px;
+      font-size: 15px;
+      font-family: arial;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    "
+    id="nav"
+  >
+    <a href="../index.html">
+      <img src="../images/logo.png" height="50px" width="50px"
+    /></a>
+    <a href="../index.html" style="margin-left: 62%">HOME</a>
+    <a href="">ABOUT</a>
+    <a href="../practicework.html">PRACTICE WORK</a>
+    <a href="https://www.behance.net/ekanshgupta2">PROJECTS</a>
+  </p>
+  <body bgcolor="#EEEEEE">
     <h1
       style="
         color: #00adb5;
@@ -77,80 +113,22 @@
         text-align: center;
       "
     >
-      Color Mode
+      Color Modes
     </h1>
-
-    <div style="padding: 1rem" class="news">
-      <h1 style="margin: 2rem 0rem">
-        Breaking News: Major Tech Firm Announces Innovative AI Development
-      </h1>
-
-      <h2 style="margin: 2rem 0rem">
-        <i>September 24, 2024 - Silicon Valley, CA</i>
-      </h2>
-      <h4
-        style="margin: 2rem 0rem"
-        style="width: 95%; text-indent: 10px; letter-spacing: 1px"
-      >
-        World leaders have convened in New York City for the Climate Summit
-        2024, where they aim to address the escalating climate crisis. United
-        Nations Secretary-General António Guterres opened the summit by
-        emphasizing the urgent need for collective action to protect the planet
-        and future generations, calling for decisive measures to combat climate
-        change.
-      </h4>
-      <h4
-        style="margin: 2rem 0rem"
-        style="width: 95%; text-indent: 10px; letter-spacing: 1px"
-      >
-        Key discussions will focus on renewable energy initiatives,
-        deforestation reduction, and sustainable practices across various
-        sectors. Activist groups are also making their voices heard, demanding
-        stronger commitments from world leaders to take immediate action, as
-        demonstrated by Greta Thunberg’s call for accountability from those in
-        power.
-      </h4>
-      <h4
-        style="margin: 2rem 0rem"
-        style="width: 95%; text-indent: 10px; letter-spacing: 1px"
-      >
-        As negotiations unfold, the summit seeks to foster partnerships between
-        governments and private sectors to promote innovative technologies and
-        sustainable practices. The outcomes of this summit could significantly
-        influence international climate policy, paving the way for a more
-        sustainable and equitable future for our planet.
-      </h4>
+    <div class="ulsec">
+      <ul>
+        <h1 style="padding: 20px">
+          <a href="promptcolormode.html"
+            ><li>Prompt & Onclick Color Mode</li></a
+          >
+        </h1>
+        <h1 style="padding: 20px">
+          <a href="slidercolormode.html"><li>Slider Range Color Mode</li></a>
+        </h1>
+        <h1 style="padding: 20px">
+          <a href="colorpick.html"><li>Pick Color</li></a>
+        </h1>
+      </ul>
     </div>
-    <script>
-      var dark;
-      var light;
-      light = document.createElement("div");
-      dark = document.createElement("div");
-      document.body.appendChild(dark);
-      dark.innerHTML =
-        "<i class='bi bi-moon-stars-fill'style='font-size: 2rem;margin-left:2rem' onclick='moon()'' ></i> <i class='bi bi-sliders'style='font-size: 2rem;margin-left:2rem' onclick='custom()'' ></i> ";
-      light.innerHTML =
-        "<i class='bi bi-brightness-high-fill'style='font-size: 2rem;margin-left:2rem' onclick='sun()'' ></i></i> <i class='bi bi-sliders'style='font-size: 2rem;margin-left:2rem' onclick='custom()'' ></i>  ";
-      function moon() {
-        document.body.style.background = "black";
-        document.body.style.color = "white";
-        document.body.removeChild(dark);
-        document.body.appendChild(light);
-      }
-      function sun() {
-        document.body.style.background = "white";
-        document.body.style.color = "black";
-        document.body.removeChild(light);
-        document.body.appendChild(dark);
-      }
-
-      function custom() {
-        var userchoicebg = prompt("Type Background Color", "white");
-        var userchoicefc = prompt("Type Text Color", "black");
-        document.body.style.background = userchoicebg;
-        document.body.style.color = userchoicefc;
-      }
-    </script>
-    <script src="first.js"></script>
   </body>
 </html>

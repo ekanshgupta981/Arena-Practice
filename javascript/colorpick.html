@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <title>Pick Color</title>
+    <style>
+      * {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      * {
+        margin: 0px;
+      }
+      main {
+        height: 30rem;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        transition: background 0.3s;
+      }
+
+      #nav a {
+        margin-left: 2rem;
+      }
+      .middle {
+        display: flex;
+        justify-content: space-between;
+        padding-right: 2rem;
+        margin-bottom: 3rem;
+        margin-top: 3rem;
+      }
+
+      #nav a:link {
+        color: white;
+        text-decoration: none;
+        transition: 0.1s;
+      }
+
+      #nav a:visited {
+        color: white;
+      }
+
+      #nav a:hover {
+        color: cyan;
+        transform: scale(1.1);
+      }
+
+      #nav a:active {
+        color: Skyblue;
+      }
+      .slider-container {
+        margin: 10px;
+        width: 80%;
+        max-width: 300px;
+      }
+      label {
+        color: orange;
+        font-size: 1.2em;
+        mix-blend-mode: difference;
+      }
+      input[type="range"] {
+        width: 100%;
+      }
+    </style>
+    <p
+      style="
+        background: #1c2128;
+        padding: 15px;
+        font-size: 15px;
+        font-family: arial;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      "
+      id="nav"
+    >
+      <a href="../index.html">
+        <img src="../images/logo.png" height="50px" width="50px"
+      /></a>
+      <a href="../index.html" style="margin-left: 62%">HOME</a>
+      <a href="">ABOUT</a>
+      <a href="../practicework.html">PRACTICE WORK</a>
+      <a href="https://www.behance.net/ekanshgupta2">PROJECTS</a>
+    </p>
+  </head>
+  <body>
+    <h1
+      style="
+        color: #00adb5;
+        font-size: 40px;
+        font-family: arial;
+        margin-top: 30px;
+        text-align: center;
+        mix-blend-mode: difference;
+      "
+    >
+      Color Mode
+    </h1>
+    <main>
+      <div class="slider-container">
+        <label>Color Code: <span id="ColorsValue">White</span></label>
+        <input type="color" id="colorPicker" value="white" />
+      </div>
+    </main>
+    <script>
+      var colorCode = document.getElementById("colorPicker");
+      var ColorsValueDisplay = document.getElementById("ColorsValue");
+
+      function ColorChanger() {
+        ColorsValueDisplay.innerHTML = colorCode.value;
+        document.body.style.background = colorCode.value;
+      }
+      colorCode.addEventListener("input", ColorChanger);
+    </script>
+  </body>
+</html>
