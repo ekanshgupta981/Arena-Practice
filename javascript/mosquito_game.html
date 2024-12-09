@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <title>Mosquito Game</title>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+      }
+      img {
+        cursor: pointer;
+        transition: top 1s linear, left 1s linear;
+      }
+
+      #deadMosq {
+        transition: 1s linear;
+        animation: dead 1s linear;
+        animation-fill-mode: forwards;
+      }
+      a:visited {
+        color: #00adb5;
+
+        font-family: arial;
+        margin-top: 30px;
+      }
+      a:link {
+        color: #00adb5;
+
+        font-family: arial;
+        margin-top: 30px;
+      }
+      @keyframes dead {
+        0% {
+          opacity: 1;
+        }
+        25% {
+          margin-top: 1rem;
+          margin-left: 1rem;
+          transform: rotate(65deg);
+        }
+        to {
+          opacity: 0;
+          margin-top: 4rem;
+        }
+      }
+    </style>
+  </head>
+  <body style="overflow: hidden">
+    <div>
+      <div
+        style="
+          position: relative;
+          width: 100vw;
+          height: 90vh;
+
+          padding: 3rem;
+          box-sizing: border-box;
+        "
+        id="parent"
+      ></div>
+    </div>
+
+    <div
+      style="
+        position: fixed;
+        top: 0;
+        z-index: 22;
+        padding-top: 2rem;
+        width: 100vw;
+      "
+    >
+      <h3
+        style="
+          color: #00adb5;
+          padding-left: 3rem;
+          font-family: arial;
+          margin-top: 10px;
+        "
+      >
+        <a href="/practicework.html">Back</a>
+      </h3>
+      <h1
+        style="
+          color: #00adb5;
+
+          font-family: arial;
+          margin-top: 30px;
+          text-align: center;
+        "
+        id="points"
+      ></h1>
+    </div>
+    <audio id="slap" src="/video_audio/slap-2-237623.mp3"></audio>
+    <audio id="buzz" src="/video_audio/synthmosq-107190.mp3"></audio>
+    <script>
+      var amount = prompt("Set the amount of mosquito", 5);
+      var mainContainer = document.getElementById("parent");
+      var slap = document.getElementById("slap");
+      var scoreBoard = document.getElementById("points");
+      var score = 0;
+
+      scoreBoard.innerHTML = `Score = ${score}`;
+
+      function createMosquito(index) {
+        var mosquitoImg = document.createElement("img");
+        var dmos = document.createElement("img");
+        mosquitoImg.src = "/images/2354478_95969.gif";
+        dmos.src = "/images/dmos.png";
+        mosquitoImg.style = "width: 7rem; position: absolute";
+        dmos.style = "width: 7rem; position: absolute";
+        mosquitoImg.id = `mosquito${index}`;
+        dmos.id = `deadMosq`;
+        mainContainer.appendChild(mosquitoImg);
+
+        function mosqPosition() {
+          let positionTop = Math.floor(Math.random() * 90) + 1;
+          let positionLeft = Math.floor(Math.random() * 90) + 1;
+
+          mosquitoImg.style.top = positionTop + "%";
+          mosquitoImg.style.left = positionLeft + "%";
+          dmos.style.top = positionTop + "%";
+          dmos.style.left = positionLeft + "%";
+
+          setTimeout(mosqPosition, 2000);
+          mosquitoImg.onclick = function () {
+            mainContainer.removeChild(mosquitoImg);
+            mainContainer.appendChild(dmos);
+            slap.play();
+            score++;
+            scoreBoard.innerHTML = `Score = ${score}`;
+          };
+        }
+
+        mosqPosition();
+      }
+
+      for (var i = 0; i < amount; i++) {
+        createMosquito(i);
+      }
+    </script>
+  </body>
+</html>
