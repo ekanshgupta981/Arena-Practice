@@ -127,10 +127,11 @@
           dmos.style.top = positionTop + "%";
           dmos.style.left = positionLeft + "%";
 
-          setTimeout(mosqPosition, 2000);
+          var mainTimer = setTimeout(mosqPosition, 2000);
           mosquitoImg.onclick = function () {
             mainContainer.removeChild(mosquitoImg);
             mainContainer.appendChild(dmos);
+            clearTimeout(mainTimer);
             slap.play();
             score++;
             scoreBoard.innerHTML = `Score = ${score}`;
