@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background: linear-gradient(#ffdad5, #fff7f9);
+        background-repeat: no-repeat;
+        box-sizing: border-box;
+        overflow: hidden;
+        height: 100vh;
+      }
+      .keys {
+        width: 2rem;
+        height: 10rem;
+        padding: 1rem;
+        background: white;
+        border: 0.1px solid rgba(128, 128, 128, 0.233);
+        box-shadow: 2px 2px 2px gray;
+        transition: 100ms linear;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+      }
+      .piano_tiles {
+        display: flex;
+
+        margin-top: 5%;
+
+        justify-content: center;
+      }
+      .keys:hover {
+        box-shadow: 0px 0px 0px gray;
+        margin-top: 3px;
+      }
+      * {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0%;
+      }
+      h4 {
+        color: rgba(128, 128, 128, 0.596);
+        padding-top: 7rem;
+        transition: 200ms linear;
+      }
+      .keys:hover h4,
+      .active h4 {
+        color: rgb(134, 103, 1);
+      }
+      #nav {
+        background: #1c2128;
+        padding: 15px;
+        font-size: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      #nav a {
+        color: white;
+        text-decoration: none;
+        margin-left: 2rem;
+        transition: 0.1s;
+      }
+
+      #nav a:hover {
+        color: cyan;
+        transform: scale(1.1);
+      }
+
+      #nav a:active {
+        color: skyblue;
+      }
+    </style>
+  </head>
+  <body>
+    <p id="nav">
+      <a href="../index.html">
+        <img src="../images/logo.png" height="50px" width="50px"
+      /></a>
+      <a href="../index.html" style="margin-left: 62%">HOME</a>
+      <a href="">ABOUT</a>
+      <a href="../practicework.html">PRACTICE WORK</a>
+      <a href="https://www.behance.net/ekanshgupta2">PROJECTS</a>
+    </p>
+    <h1
+      style="
+        color: #de8a52;
+        font-size: 40px;
+        font-family: arial;
+        margin-top: 50px;
+        text-align: center;
+      "
+    >
+      Color Mode
+    </h1>
+    <div class="piano_tiles">
+      <div class="keys" id="sa">
+        <h4 style="text-align: center">Sa</h4>
+      </div>
+      <div class="keys" id="re">
+        <h4 style="text-align: center">Re</h4>
+      </div>
+      <div class="keys" id="ga">
+        <h4 style="text-align: center">Ga</h4>
+      </div>
+      <div class="keys" id="ma">
+        <h4 style="text-align: center">Ma</h4>
+      </div>
+      <div class="keys" id="pa">
+        <h4 style="text-align: center">Pa</h4>
+      </div>
+      <div class="keys" id="dha">
+        <h4 style="text-align: center">Dha</h4>
+      </div>
+      <div class="keys" id="ni">
+        <h4 style="text-align: center">Ni</h4>
+      </div>
+      <div class="keys" id="saa">
+        <h4 style="text-align: center">Sa</h4>
+      </div>
+    </div>
+    <audio id="sa_audio" src="/video_audio/do-80236.mp3"></audio>
+    <audio id="re_audio" src="/video_audio/re-78500.mp3"></audio>
+    <audio id="ga_audio" src="/video_audio/mi-80239.mp3"></audio>
+    <audio id="ma_audio" src="/video_audio/fa-78409.mp3"></audio>
+    <audio id="pa_audio" src="/video_audio/sol-101774.mp3"></audio>
+    <audio id="dha_audio" src="/video_audio/la-80237.mp3"></audio>
+    <audio id="ni_audio" src="/video_audio/si-80238.mp3"></audio>
+    <audio id="saa_audio" src="/video_audio/doo-80236.mp3"></audio>
+
+    <script>
+      let pressedKeys = {}; // Tracks keys currently pressed
+
+      var keys;
+      var sa = document.getElementById("sa");
+      var re = document.getElementById("re");
+      var ga = document.getElementById("ga");
+      var ma = document.getElementById("ma");
+      var pa = document.getElementById("pa");
+      var dha = document.getElementById("dha");
+      var ni = document.getElementById("ni");
+      var saa = document.getElementById("saa");
+
+      var sa_audio = document.getElementById("sa_audio");
+      var re_audio = document.getElementById("re_audio");
+      var ga_audio = document.getElementById("ga_audio");
+      var ma_audio = document.getElementById("ma_audio");
+      var pa_audio = document.getElementById("pa_audio");
+      var dha_audio = document.getElementById("dha_audio");
+      var ni_audio = document.getElementById("ni_audio");
+      var saa_audio = document.getElementById("saa_audio");
+
+      function play(e) {
+        keys = e.keyCode;
+        if (pressedKeys[keys]) return; // Prevent repeated actions
+        pressedKeys[keys] = true;
+
+        switch (keys) {
+          case 65:
+            sa_audio.play();
+            sa.classList.add("active");
+            sa.style = "box-shadow: 0px 0px 0px gray; margin-top: 3px;";
+            break;
+
+          case 83:
+            re_audio.play();
+            re.classList.add("active");
+            re.style = "box-shadow: 0px 0px 0px gray; margin-top: 3px;";
+            break;
+
+          case 68:
+            ga_audio.play();
+            ga.classList.add("active");
+            ga.style = "box-shadow: 0px 0px 0px gray; margin-top: 3px;";
+            break;
+
+          case 70:
+            ma_audio.play();
+            ma.classList.add("active");
+            ma.style = "box-shadow: 0px 0px 0px gray; margin-top: 3px;";
+            break;
+
+          case 71:
+            pa_audio.play();
+            pa.classList.add("active");
+            pa.style = "box-shadow: 0px 0px 0px gray; margin-top: 3px;";
+            break;
+
+          case 72:
+            dha_audio.play();
+            dha.classList.add("active");
+            dha.style = "box-shadow: 0px 0px 0px gray; margin-top: 3px;";
+            break;
+
+          case 74:
+            ni_audio.play();
+            ni.classList.add("active");
+            ni.style = "box-shadow: 0px 0px 0px gray; margin-top: 3px;";
+            break;
+
+          case 75:
+            saa_audio.play();
+            saa.classList.add("active");
+            saa.style = "box-shadow: 0px 0px 0px gray; margin-top: 3px;";
+            break;
+        }
+      }
+
+      function pauses(e) {
+        keys = e.keyCode;
+        pressedKeys[keys] = false; // Allow key to be pressed again
+
+        switch (keys) {
+          case 65:
+            sa.classList.remove("active");
+            sa.style =
+              "width: 2rem; height: 10rem; padding: 1rem; background: white;border: 0.1px solid rgba(128, 128, 128, 0.233); box-shadow: 2px 2px 2px gray; transition: 100ms linear; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;";
+            sa_audio.pause();
+            sa_audio.currentTime = 0;
+            break;
+
+          case 83:
+            re.classList.remove("active");
+            re.style =
+              "width: 2rem; height: 10rem; padding: 1rem; background: white;border: 0.1px solid rgba(128, 128, 128, 0.233); box-shadow: 2px 2px 2px gray; transition: 100ms linear; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;";
+            re_audio.pause();
+            re_audio.currentTime = 0;
+            break;
+
+          case 68:
+            ga.classList.remove("active");
+            ga.style =
+              "width: 2rem; height: 10rem; padding: 1rem; background: white;border: 0.1px solid rgba(128, 128, 128, 0.233); box-shadow: 2px 2px 2px gray; transition: 100ms linear; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;";
+            ga_audio.pause();
+            ga_audio.currentTime = 0;
+            break;
+
+          case 70:
+            ma.classList.remove("active");
+            ma.style =
+              "width: 2rem; height: 10rem; padding: 1rem; background: white;border: 0.1px solid rgba(128, 128, 128, 0.233); box-shadow: 2px 2px 2px gray; transition: 100ms linear; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;";
+            ma_audio.pause();
+            ma_audio.currentTime = 0;
+            break;
+
+          case 71:
+            pa.classList.remove("active");
+            pa.style =
+              "width: 2rem; height: 10rem; padding: 1rem; background: white;border: 0.1px solid rgba(128, 128, 128, 0.233); box-shadow: 2px 2px 2px gray; transition: 100ms linear; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;";
+            pa_audio.pause();
+            pa_audio.currentTime = 0;
+            break;
+
+          case 72:
+            dha.classList.remove("active");
+            dha.style =
+              "width: 2rem; height: 10rem; padding: 1rem; background: white;border: 0.1px solid rgba(128, 128, 128, 0.233); box-shadow: 2px 2px 2px gray; transition: 100ms linear; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;";
+            dha_audio.pause();
+            dha_audio.currentTime = 0;
+            break;
+
+          case 74:
+            ni.classList.remove("active");
+            ni.style =
+              "width: 2rem; height: 10rem; padding: 1rem; background: white;border: 0.1px solid rgba(128, 128, 128, 0.233); box-shadow: 2px 2px 2px gray; transition: 100ms linear; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;";
+            ni_audio.pause();
+            ni_audio.currentTime = 0;
+            break;
+
+          case 75:
+            saa.classList.remove("active");
+            saa.style =
+              "width: 2rem; height: 10rem; padding: 1rem; background: white;border: 0.1px solid rgba(128, 128, 128, 0.233); box-shadow: 2px 2px 2px gray; transition: 100ms linear; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;";
+            saa_audio.pause();
+            saa_audio.currentTime = 0;
+            break;
+        }
+      }
+
+      document.addEventListener("keydown", play);
+      document.addEventListener("keyup", pauses);
+    </script>
+  </body>
+</html>
