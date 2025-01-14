@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <title>Canvas</title>
+    <style>
+      * {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      * {
+        margin: 0px;
+      }
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden; /* Prevent scrollbars */
+        height: 100%;
+      }
+
+      #nav a {
+        margin-left: 2rem;
+      }
+      .middle {
+        display: flex;
+        justify-content: space-between;
+        padding-right: 2rem;
+        margin-bottom: 3rem;
+        margin-top: 3rem;
+      }
+
+      #nav a:link {
+        color: white;
+        text-decoration: none;
+        transition: 0.1s;
+      }
+
+      #nav a:visited {
+        color: white;
+      }
+
+      #nav a:hover {
+        color: cyan;
+        transform: scale(1.1);
+      }
+
+      #nav a:active {
+        color: Skyblue;
+      }
+    </style>
+    <p
+      style="
+        background: #1c2128;
+        padding: 15px;
+        font-size: 15px;
+        font-family: arial;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      "
+      id="nav"
+    >
+      <a href="../index.html">
+        <img src="../images/logo.png" height="50px" width="50px"
+      /></a>
+      <a href="../index.html" style="margin-left: 62%">HOME</a>
+      <a href="">ABOUT</a>
+      <a href="../practicework.html">PRACTICE WORK</a>
+      <a href="https://www.behance.net/ekanshgupta2">PROJECTS</a>
+    </p>
+  </head>
+  <body>
+    <!-- <h1
+      style="
+        color: #00adb5;
+        font-size: 40px;
+        font-family: arial;
+        margin-top: 30px;
+        text-align: center;
+        mix-blend-mode: difference;
+      "
+    >
+      Color Mode
+    </h1> -->
+
+    <canvas id="canvaartboard"></canvas>
+    <input
+      type="color"
+      id="mycolor"
+      style="position: absolute; top: 100px; left: 100px"
+    />
+
+    <script>
+      var artboard = document.getElementById("canvaartboard");
+      var colorBox = document.getElementById("mycolor");
+      var xAxis, yAxis;
+      var canvas = artboard.getContext("2d");
+      var w = window.innerWidth;
+      var h = window.innerHeight;
+      var brushColor;
+      var brushSize = 10;
+      var drawMode = false;
+      var eraseMode = false;
+      artboard.width = window.innerWidth;
+      artboard.height = window.innerHeight;
+      colorBox.onchange = function () {
+        brushColor = this.value;
+      };
+      function moving(e) {
+        if (drawMode) {
+          var xAxis = e.offsetX;
+          var yAxis = e.offsetY;
+          canvas.beginPath();
+          canvas.arc(xAxis, yAxis, brushSize, 0, 2 * Math.PI);
+          canvas.fillStyle = brushColor;
+          canvas.fill();
+        }
+      }
+
+      function paintingOn() {
+        drawMode = true;
+        document.title = drawMode;
+      }
+      function paintingOff() {
+        drawMode = false;
+        document.title = drawMode;
+      }
+      function keySet(e) {
+        if (e.keyCode === 69) {
+          if (!eraseMode) {
+            eraseMode = true;
+
+            const notification = document.createElement("div");
+            notification.id = "notification";
+            notification.textContent = "Erase mode on";
+            notification.style.position = "fixed";
+            notification.style.bottom = "20px";
+            notification.style.right = "20px";
+            notification.style.padding = "10px 20px";
+            notification.style.backgroundColor = "green";
+            notification.style.color = "white";
+            notification.style.fontSize = "16px";
+            notification.style.borderRadius = "5px";
+            notification.style.boxShadow = "0 2px 5px rgba(0, 0, 0, 0.3)";
+            notification.style.zIndex = "1000";
+            brushColor = "white";
+            document.body.appendChild(notification);
+
+            setTimeout(() => {
+              notification.remove();
+            }, 4000);
+          } else {
+            eraseMode = false;
+            brushColor = colorBox.value;
+            const notification = document.createElement("div");
+            notification.id = "notification";
+            notification.textContent = "Erase mode off";
+            notification.style.position = "fixed";
+            notification.style.bottom = "20px";
+            notification.style.right = "20px";
+            notification.style.padding = "10px 20px";
+            notification.style.backgroundColor = "red";
+            notification.style.color = "white";
+            notification.style.fontSize = "16px";
+            notification.style.borderRadius = "5px";
+            notification.style.boxShadow = "0 2px 5px rgba(0, 0, 0, 0.3)";
+            notification.style.zIndex = "1000";
+
+            document.body.appendChild(notification);
+
+            setTimeout(() => {
+              notification.remove();
+            }, 4000);
+          }
+        }
+
+        if (e.key === "+" || e.key === "=") {
+          if (brushSize < 50) {
+            brushSize++;
+          }
+        }
+
+        if (e.key === "-") {
+          if (brushSize > 1) {
+            brushSize--;
+          }
+        }
+
+        console.log("Brush Size:", brushSize); // Log the current brush size
+      }
+      function resizeCanvas() {
+        artboard.width = window.innerWidth;
+        artboard.height = window.innerHeight;
+      }
+
+      resizeCanvas();
+      window.addEventListener("resize", resizeCanvas);
+      document.addEventListener("mousemove", moving);
+      document.addEventListener("mousedown", paintingOn);
+      document.addEventListener("mouseup", paintingOff);
+      document.addEventListener("keydown", keySet);
+    </script>
+  </body>
+</html>
