@@ -106,6 +106,7 @@
       var brushSize = 10;
       var drawMode = false;
       var eraseMode = false;
+
       artboard.width = window.innerWidth;
       artboard.height = window.innerHeight;
       colorBox.onchange = function () {
@@ -124,11 +125,9 @@
 
       function paintingOn() {
         drawMode = true;
-        document.title = drawMode;
       }
       function paintingOff() {
         drawMode = false;
-        document.title = drawMode;
       }
       function keySet(e) {
         if (e.keyCode === 69) {
