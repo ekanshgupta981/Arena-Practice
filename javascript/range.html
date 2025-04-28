@@ -9,41 +9,51 @@
     />
     <title>Range</title>
     <style>
+      /* Basic Reset */
       * {
-        font-family: Arial, Helvetica, sans-serif;
-      }
-      * {
-        margin: 0px;
-      }
-
-      #nav a {
-        margin-left: 2rem;
-      }
-      .middle {
-        display: flex;
-        justify-content: space-between;
-        padding-right: 2rem;
-        margin-bottom: 3rem;
-        margin-top: 3rem;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
       }
 
-      #nav a:link {
-        color: white;
-        text-decoration: none;
-        transition: 0.1s;
+      /* Custom Cursor */
+      body {
+        cursor: none !important; /* Hide default cursor */
       }
 
-      #nav a:visited {
-        color: white;
+      #cursor {
+        position: absolute;
+        mix-blend-mode: difference;
+        width: 20px;
+        height: 20px;
+        background-color: #ff4d4d;
+        border-radius: 50%;
+        pointer-events: none;
+        transition: transform 0.2s ease, background-color 0.3s ease;
       }
 
-      #nav a:hover {
-        color: cyan;
+      /* Hover Effect */
+      .hover-target {
+        padding: 20px;
+        background-color: #222;
+        color: #fff;
+        text-align: center;
+        cursor: pointer;
+        transition: transform 0.3s ease, color 0.3s ease;
+      }
+
+      .hover-target:hover {
         transform: scale(1.1);
+        color: #ff4d4d;
       }
 
-      #nav a:active {
-        color: Skyblue;
+      /* Move the custom cursor with mouse */
+      body {
+        position: relative;
+      }
+
+      #cursor {
+        display: block;
       }
     </style>
     <p
@@ -68,66 +78,17 @@
     </p>
   </head>
   <body>
-    <h1
-      style="
-        color: #00adb5;
-        font-size: 40px;
-        font-family: arial;
-        margin-top: 30px;
-        text-align: center;
-      "
-    >
-      Range
-    </h1>
-    <section>
-      <div
-        style="
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          position: relative;
-        "
-      >
-        <div>
-          <img
-            src="/images/2151605392.jpg"
-            alt=""
-            style="width: 10rem"
-            id="img_id"
-          />
-        </div>
-      </div>
-      <div style="position: absolute">
-        <div>
-          <label for="">height</label
-          ><input
-            type="range"
-            style="width: 25rem; margin: 2rem"
-            id="height_input"
-          />
-        </div>
-
-        <div>
-          <label for="">width</label
-          ><input
-            type="range"
-            style="width: 25rem; margin: 2rem"
-            id="width_input"
-          />
-        </div>
-      </div>
-    </section>
+    <div class="hover-target">Hover over me!</div>
     <script>
-      var widthInpt = document.getElementById("width_input");
-      var heightInpt = document.getElementById("height_input");
-      var images = document.getElementById("img_id");
+      // JS for custom cursor movement
+      const cursor = document.createElement("div");
+      cursor.id = "cursor";
+      document.body.appendChild(cursor);
 
-      heightInpt.onchange = function () {
-        images.style.height = `${this.value}rem`;
-      };
-      widthInpt.onchange = function () {
-        images.style.widthInpt = `${this.value}rem`;
-      };
+      document.addEventListener("mousemove", (e) => {
+        cursor.style.left = `${e.pageX - cursor.offsetWidth / 2}px`;
+        cursor.style.top = `${e.pageY - cursor.offsetHeight / 2}px`;
+      });
     </script>
   </body>
 </html>

@@ -46,3 +46,32 @@ document.addEventListener("DOMContentLoaded", function () {
   handleScroll(); // Trigger on load
   window.addEventListener("scroll", handleScroll);
 });
+
+function createCircle() {
+  const parent = document.querySelector(".homes");
+  const circle = document.createElement("div");
+  circle.classList.add("circle");
+
+  // Set random positions and sizes
+  const size = Math.random() * 300 + 50; // Random size between 20 and 100px
+  const xPos = Math.random() * (window.innerWidth - size);
+  const yPos = Math.random() * (window.innerHeight - size);
+
+  circle.style.width = `${size}px`;
+  circle.style.height = `${size}px`;
+  circle.style.left = `${xPos}px`;
+  circle.style.top = `${yPos}px`;
+
+  parent.appendChild(circle);
+
+  // Remove the circle after animation
+  circle.addEventListener("animationend", () => {
+    parent.removeChild(circle);
+  });
+}
+
+function spawnCircles() {
+  setInterval(createCircle, 1500); // Generate a new circle every 1.5 seconds
+}
+
+spawnCircles();
