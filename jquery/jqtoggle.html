@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <title>jquery test</title>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+      }
+      li {
+        font-size: 2rem;
+        padding: 0.5rem 2rem;
+        width: 8rem;
+        color: white;
+        cursor: pointer;
+        border-radius: 5px;
+        background: black;
+        border: 2px solid white;
+        transition: 200ms linear;
+        text-align: center;
+      }
+      li:hover {
+        background: white;
+        color: black;
+        border: 2px solid black;
+      }
+    </style>
+  </head>
+  <body class="">
+    <div style="padding: 2rem">
+      <div>
+        <ul>
+          <li id="food">Food</li>
+          <ul id="food-list">
+            <li id="fruits">Fruits</li>
+            <ol id="fruit-list">
+              <li>kela</li>
+              <li>seb</li>
+            </ol>
+            <li id="vege">vegetables</li>
+            <ol id="vege-list">
+              <li>aalu</li>
+              <li>Bhindi</li>
+            </ol>
+          </ul>
+        </ul>
+      </div>
+    </div>
+    <script>
+      $(document).ready(function () {
+        $("#food-list").hide();
+        $("#fruit-list").hide();
+        $("#vege-list").hide();
+        $("#fruits").click(function () {
+          $("#fruit-list").toggle(200);
+        });
+        $("#vege").click(function () {
+          $("#vege-list").toggle(200);
+        });
+        $("#food").click(function () {
+          $("#food-list").toggle(200);
+        });
+      });
+    </script>
+  </body>
+</html>
